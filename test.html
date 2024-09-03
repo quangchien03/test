@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>---Bài Kiểm Tra Điểm B---</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            background-color: bisque;
+            font-size: 20px;
+
+        }
+
+        .calculator {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            margin-top: 50px;
+            border: 2px solid black;
+            border-radius: 5px;
+            padding: 20px;
+            height: 450px;
+            width: 400px;
+            gap: 20px;
+        }
+
+        input,
+        button {
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 3px;
+        }
+
+        .button-container {
+            display: flex;
+        }
+
+        .button-container button {
+            margin-right: 20px;
+        }
+
+        button {
+            width: 100px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function calculateSum() {
+            var num1 = parseInt(document.getElementById('number1').value);
+            var num2 = parseInt(document.getElementById('number2').value);
+            var sum = num1 + num2;
+            document.getElementById('result').value = "Tổng: " + sum;
+        }
+
+        function calculateDifference() {
+            var num1 = parseInt(document.getElementById('number1').value);
+            var num2 = parseInt(document.getElementById('number2').value);
+            var difference = num1 - num2;
+            document.getElementById('result').value = "Hiệu: " + difference;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="calculator">
+        <h1>Tính tổng và hiệu</h1>
+        <label for="number1">Số thứ nhất:</label>
+        <input type="text" name="number1" id="number1" placeholder="Nhập số thứ nhất">
+        <label for="number2">Số thứ hai:</label>
+        <input type="text" name="number2" id="number2" placeholder="Nhập số thứ hai">
+        <div class="button-container">
+            <button onclick="calculateSum()">Tính tổng</button>
+            <button onclick="calculateDifference()">Tính hiệu</button>
+        </div>
+        <input type="text" id="result" readonly>
+    </div>
+</body>
+
+</html>
